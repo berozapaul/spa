@@ -11,7 +11,7 @@ const Timer = (props) =>{
 
   // formats the time in `hh:mm:ss` format
   const formatTimePassed = () => {
-    return (new Date(timePassed)).toISOString().substr(11, 8);
+    return (new Date(timePassed * 1000)).toISOString().substr(11, 8);
   };
 
   const resetTimer = () => {
@@ -20,11 +20,10 @@ const Timer = (props) =>{
 
   useEffect(() => {
     const intervalId = setInterval(() => {  //assign interval to a variable to clear it.
-      // const newValue = timePassed + 1;
-      setTimePassed(prev => (prev + 1));
-    }, 100);
+      setTimePassed(prev =>  prev + 1);
+    }, 1000);
 
-    return () => clearInterval(intervalId); // This is important
+    return () => clearInterval(intervalId);
 
   }, [timePassed]);
 
