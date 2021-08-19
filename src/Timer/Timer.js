@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
+import './timer.css'
 /*
- * Purpose: The purpose of this component is to render common errors.
- *          This component is going to be common to all the routes.
+ * Purpose: The purpose of this component is the timer output.
+ *          It will change on every second.
  * Version: 1.0
  * Author: dev@cefalo.com
  */
@@ -27,6 +28,6 @@ const Timer = (props) =>{
 
   }, [timePassed]);
 
-  return <div onClick={resetTimer}>{formatTimePassed()}</div>;
+  return <div onClick={resetTimer} className="timer">{formatTimePassed()}</div>;
 };
 export default Timer;
