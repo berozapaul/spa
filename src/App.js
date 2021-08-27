@@ -5,12 +5,14 @@ import Ref from "./Ref/Ref";
 import Memo from "./Memo/Memo";
 import Parent from "./PassData/Parent";
 import PromiseEntity from "./Promise/PromiseEntity";
+import RenderProps from "./RenderProps/RenderProps";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <PromiseEntity/>
+        <RenderProps/>
         {/*<Parent/>*/}
         {/*<Memo/>*/}
         {/*<Ref/>*/}
