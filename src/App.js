@@ -10,27 +10,47 @@ import PromiseEntity from "./Promise/PromiseEntity";
 import RenderProps from "./RenderProps/RenderProps";
 import useConstructor from "./Hooks/useConstructor";
 
+import formatRelative from 'date-fns/formatRelative';
+import nb from 'date-fns/locale/nb';
+import { format } from 'date-fns'
+
+
+
 function App() {
   const [initialValue, setInitialValue] = useState('');
   useConstructor(() => {
     console.log('It comes here once');
-    setInitialValue('This should set before the render');
+    // setInitialValue('This should set before the render');
   });
 
   const handleClick = (event) => {
     setInitialValue('');
   };
 
+  const formatRelativeLocale = {
+    lastWeek: 'eeee HH:mm',
+    yesterday: 'eeee HH:mm',
+    today: 'HH:mm',
+    other: 'dd.MM.yyyy',
+  };
+
+  const locale = {
+    ...nb,
+    formatRelative: (token) => formatRelativeLocale[token],
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <PromiseEntity/>
-        <RenderProps/>
+        <h1>Polaris ad</h1>
+        {/*<PromiseEntity/>*/}
+        {/*<RenderProps/>*/}
         {/*<Parent/>*/}
         {/*<Memo/>*/}
         {/*<Ref/>*/}
         {/*<Timer/>*/}
-        <h2>{initialValue}</h2>
+        <h2>{format(new Date(2014, 1, 11), 'yyyy-MM-dd')}</h2>
+        <h2>{formatRelative(new Date(2014, 1, 11), new Date(), { locale })}</h2>
         <img src={logo} className="App-logo" alt="logo" />
         <p onClick={handleClick}>
           Edit <code>src/App.js</code> and save to reload.
