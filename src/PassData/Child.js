@@ -8,6 +8,7 @@ import React from 'react';
 
 const Child = (props) =>{
     const handleClick = () => {
+        // eslint-disable-next-line react/prop-types
         props.sendData({name: 'Joe Smith'});
     };
     return (

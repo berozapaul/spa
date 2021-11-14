@@ -20,10 +20,10 @@ function App() {
   const [initialValue, setInitialValue] = useState('');
   useConstructor(() => {
     console.log('It comes here once');
-    // setInitialValue('This should set before the render');
+    setInitialValue('This should set before the render');
   });
 
-  const handleClick = (event) => {
+  const handleClick = () => {
     setInitialValue('');
   };
 
@@ -43,12 +43,12 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Polaris ad</h1>
-        {/*<PromiseEntity/>*/}
-        {/*<RenderProps/>*/}
-        {/*<Parent/>*/}
-        {/*<Memo/>*/}
-        {/*<Ref/>*/}
-        {/*<Timer/>*/}
+        <PromiseEntity/>
+        <RenderProps/>
+        <Parent/>
+        <Memo/>
+        <Ref/>
+        <Timer/>
         <h2>{format(new Date(2014, 1, 11), 'yyyy-MM-dd')}</h2>
         <h2>{formatRelative(new Date(2014, 1, 11), new Date(), { locale })}</h2>
         <img src={logo} className="App-logo" alt="logo" />
@@ -58,6 +58,7 @@ function App() {
         <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
           Learn React
         </a>
+        {initialValue}
       </header>
     </div>
   );
