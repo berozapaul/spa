@@ -7,7 +7,7 @@ import React, {useState, useMemo} from 'react';
 
 const Memo = () =>{
     const [number, setNumber] = useState(1);
-    const [inc, setInc] = useState(0);
+    // const [inc, setInc] = useState(0);
 
     const factorial = useMemo(() => factorialOf(number), [number]);
 

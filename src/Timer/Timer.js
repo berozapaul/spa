@@ -7,7 +7,7 @@ import './timer.css'
  * Author: dev@cefalo.com
  */
 
-const Timer = (props) =>{
+const Timer = () =>{
   const [timePassed, setTimePassed] = useState(0);
 
   // formats the time in `hh:mm:ss` format
